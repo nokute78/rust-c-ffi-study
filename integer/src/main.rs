@@ -24,6 +24,8 @@ extern {
     fn C_print_int64_t(val: i64);
 
     fn C_ret_even_odd(num: libc::c_int) -> EVEN_ODD;
+
+    static C_INT_MAX: libc::c_int;
 }
 
 #[repr(C)]
@@ -53,5 +55,7 @@ fn main() {
         let val = 11;
         print!("{} is ", val);
         print_even_odd( C_ret_even_odd(val) );
+
+        println!("Global variable C_INT_MAX is {}", C_INT_MAX);
     }
 }

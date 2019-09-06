@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <inttypes.h>
+#include <limits.h>
 
 int C_return_int(void) {
   int ret = 10;
@@ -45,3 +46,5 @@ typedef enum even_odd{
 C_EVEN_ODD C_ret_even_odd(int num) {
   return num % 2 == 0 ? EVEN: ODD;
 }
+
+const int C_INT_MAX = INT_MAX;
