@@ -35,3 +35,13 @@ void print_int(int val) {
 void print_int64_t(int64_t val) {
   printf("c: val=%"PRId64"\n",val);
 }
+
+
+typedef enum even_odd{
+  EVEN = 10,
+  ODD,
+}EVEN_ODD;
+
+EVEN_ODD ret_even_odd(int num) {
+  return num % 2 == 0 ? EVEN: ODD;
+}
