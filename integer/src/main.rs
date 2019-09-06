@@ -18,12 +18,12 @@ extern crate libc;
 
 #[link(name = "int")]
 extern {
-    fn return_int()-> libc::c_int;
-    fn return_int64_t() -> i64; // libc::int64_t is deprecated.
-    fn print_int(val: libc::c_int);
-    fn print_int64_t(val: i64);
+    fn C_return_int()-> libc::c_int;
+    fn C_return_int64_t() -> i64; // libc::int64_t is deprecated.
+    fn C_print_int(val: libc::c_int);
+    fn C_print_int64_t(val: i64);
 
-    fn ret_even_odd(num: libc::c_int) -> EVEN_ODD;
+    fn C_ret_even_odd(num: libc::c_int) -> EVEN_ODD;
 }
 
 #[repr(C)]
@@ -41,17 +41,17 @@ fn print_even_odd(val: EVEN_ODD) {
 
 fn main() {
     unsafe {
-        println!("return_int() = {}",return_int());
-        print_int(11);
-        println!("return_int64_t() = {}",return_int64_t());
-        print_int64_t(2147483648 * 2);
+        println!("C_return_int() = {}",C_return_int());
+        C_print_int(11);
+        println!("C_return_int64_t() = {}",C_return_int64_t());
+        C_print_int64_t(2147483648 * 2);
 
         let val = 10;
         print!("{} is ", val);
-        print_even_odd( ret_even_odd(val) );
+        print_even_odd( C_ret_even_odd(val) );
 
         let val = 11;
         print!("{} is ", val);
-        print_even_odd( ret_even_odd(val) );
+        print_even_odd( C_ret_even_odd(val) );
     }
 }

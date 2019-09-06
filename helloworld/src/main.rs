@@ -16,11 +16,11 @@
 
 #[link(name = "hello")]
 extern {
-    fn helloworld();
+    fn C_helloworld();
 }
 
 fn main() {
     unsafe {
-        helloworld();
+        C_helloworld();
     }
 }

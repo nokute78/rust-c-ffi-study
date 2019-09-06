@@ -16,6 +16,6 @@
 
 #include <stdio.h>
 
-void helloworld(void) {
+void C_helloworld(void) {
   printf("helloworld\n");
 }

@@ -18,21 +18,21 @@
 #include <stdint.h>
 #include <inttypes.h>
 
-int return_int(void) {
+int C_return_int(void) {
   int ret = 10;
   return ret;
 }
 
-int64_t return_int64_t(void) {
+int64_t C_return_int64_t(void) {
   int64_t ret = 2147483648;
   return  ret;
 }
 
-void print_int(int val) {
+void C_print_int(int val) {
   printf("c: val=%d\n",val);
 }
 
-void print_int64_t(int64_t val) {
+void C_print_int64_t(int64_t val) {
   printf("c: val=%"PRId64"\n",val);
 }
 
@@ -40,8 +40,8 @@ void print_int64_t(int64_t val) {
 typedef enum even_odd{
   EVEN = 10,
   ODD,
-}EVEN_ODD;
+}C_EVEN_ODD;
 
-EVEN_ODD ret_even_odd(int num) {
+C_EVEN_ODD C_ret_even_odd(int num) {
   return num % 2 == 0 ? EVEN: ODD;
 }
