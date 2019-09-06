@@ -59,3 +59,41 @@ fn main() {
         println!("Global variable C_INT_MAX is {}", C_INT_MAX);
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_c_return_int() {
+        unsafe {
+            assert_eq!(10, super::C_return_int());
+        }
+    }
+    #[test]
+    fn test_c_return_int64_t() {
+        unsafe {
+            assert_eq!(2147483648, super::C_return_int64_t());
+        }
+    }
+
+    #[test]
+    fn test_c_ret_even_odd() {
+        unsafe {
+            match super::C_ret_even_odd(10) {
+                super::EVEN_ODD::ODD => {panic!("10 is EVEN")}
+                _ => {}
+            }
+            match super::C_ret_even_odd(11) {
+                super::EVEN_ODD::EVEN => {panic!("10 is ODD")}
+                _ => {}
+            }
+        }
+    }
+
+    #[test]
+    fn test_c_int_max() {
+        unsafe{
+            assert_eq!(libc::INT_MAX, super::C_INT_MAX);
+        }
+    }
+}
