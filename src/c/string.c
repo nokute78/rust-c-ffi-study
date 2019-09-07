@@ -12,13 +12,12 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
- */
-mod helloworld;
-mod integer;
-mod string;
+*/
 
-fn main() {
-    helloworld::main();
-    integer::main();
-    string::main();
+#include <stdio.h>
+
+void C_print_str(const char *str) {
+  if (str != NULL) {
+    printf("str=%s\n", str);
+  }
 }

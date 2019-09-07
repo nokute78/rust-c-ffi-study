@@ -13,12 +13,19 @@
    See the License for the specific language governing permissions and
    limitations under the License.
  */
-mod helloworld;
-mod integer;
-mod string;
 
-fn main() {
-    helloworld::main();
-    integer::main();
-    string::main();
+use std::ffi::CString;
+use std::os::raw::c_char;
+
+#[link(name = "string")]
+extern {
+    fn C_print_str(str: *const c_char);
+}
+
+pub fn main() {
+    let str = CString::new("Hello").expect("CString::new failed");
+    unsafe {
+        C_print_str(str.as_ptr());
+        
+    }
 }
