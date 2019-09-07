@@ -1,5 +1,5 @@
 [package]
-name = "integer"
+name = "rust-ffi-study"
 version = "0.1.0"
 authors = ["Takahiro YAMASHITA <nokute78@gmail.com>"]
 edition = "2018"

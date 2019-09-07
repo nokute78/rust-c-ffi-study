@@ -14,8 +14,13 @@
    limitations under the License.
 */
 
-extern crate cc;
+#[link(name = "hello")]
+extern {
+    fn C_helloworld();
+}
 
-fn main() {
-    cc::Build::new().file("src/int.c").compile("int")
+pub fn main() {
+    unsafe {
+        C_helloworld();
+    }
 }

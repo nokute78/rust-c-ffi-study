@@ -17,5 +17,6 @@
 extern crate cc;
 
 fn main() {
-    cc::Build::new().file("src/helloworld.c").compile("hello")
+    cc::Build::new().file("src/c/helloworld.c").compile("hello");
+    cc::Build::new().file("src/c/int.c").compile("int");
 }

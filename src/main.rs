@@ -12,15 +12,11 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
-
-#[link(name = "hello")]
-extern {
-    fn C_helloworld();
-}
+ */
+mod helloworld;
+mod integer;
 
 fn main() {
-    unsafe {
-        C_helloworld();
-    }
+    helloworld::main();
+    integer::main();
 }

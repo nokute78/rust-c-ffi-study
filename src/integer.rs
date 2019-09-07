@@ -41,7 +41,7 @@ fn print_even_odd(val: EVEN_ODD) {
     }
 }
 
-fn main() {
+pub fn main() {
     unsafe {
         println!("C_return_int() = {}",C_return_int());
         C_print_int(11);
