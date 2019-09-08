@@ -20,12 +20,20 @@ use std::os::raw::c_char;
 #[link(name = "string")]
 extern {
     fn C_print_str(str: *const c_char);
+    static mut kv: [C_kv; 2];
+}
+
+#[repr(C)]
+struct  C_kv {
+    pub key:   *mut c_char,
+    pub value: libc::c_int,
 }
 
 pub fn main() {
     let str = CString::new("Hello").expect("CString::new failed");
     unsafe {
         C_print_str(str.as_ptr());
-        
+        C_print_str(kv[0].key);
     }
 }
+

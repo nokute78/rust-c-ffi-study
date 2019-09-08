@@ -16,7 +16,17 @@
 
 #include <stdio.h>
 
-void C_print_str(const char *str) {
+struct C_kv{
+  char *key;
+  int   value;
+};
+
+struct C_kv kv[] =  {
+  {"C_ONE", 1},
+  {"C_TWO", 2},
+};
+
+void C_print_str(char *str) {
   if (str != NULL) {
     printf("str=%s\n", str);
   }
