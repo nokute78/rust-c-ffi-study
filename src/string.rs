@@ -35,9 +35,15 @@ pub fn main() {
     let str = CString::new("Hello").expect("CString::new failed");
     unsafe {
         C_print_str(str.as_ptr());
+
+        // use Rust String.
+        let rust_str = "Hello Rust";
+        let rust_cstring = CString::new(rust_str).expect("CString::new failed"); // convert CString.
+        C_print_str(rust_cstring.as_ptr());
+
         C_print_str(kv[0].key);
 
-        C_print_str(C_const_str);
+        C_print_str(C_const_str); // print c const char*;
     }
 }
 
