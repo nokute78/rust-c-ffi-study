@@ -21,6 +21,8 @@ struct C_kv{
   int   value;
 };
 
+const char *C_const_str = "HELLO";
+
 struct C_kv kv[] =  {
   {"C_ONE", 1},
   {"C_TWO", 2},
