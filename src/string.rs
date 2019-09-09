@@ -16,11 +16,13 @@
 
 use std::ffi::CString;
 use std::os::raw::c_char;
+use std::ptr::copy;
 
 #[link(name = "string")]
 extern {
     fn C_print_str(str: *const c_char);
     static mut kv: [C_kv; 2];
+    static C_const_str:&'static *const c_char;
 }
 
 #[repr(C)]
