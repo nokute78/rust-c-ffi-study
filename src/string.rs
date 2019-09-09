@@ -22,7 +22,7 @@ use std::ptr::copy;
 extern {
     fn C_print_str(str: *const c_char);
     static mut kv: [C_kv; 2];
-    static C_const_str:&'static *const c_char;
+    static C_const_str: *const c_char;
 }
 
 #[repr(C)]
@@ -36,6 +36,8 @@ pub fn main() {
     unsafe {
         C_print_str(str.as_ptr());
         C_print_str(kv[0].key);
+
+        C_print_str(C_const_str);
     }
 }
 
