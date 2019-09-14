@@ -26,3 +26,16 @@ pub fn main() {
         println!("C_pi = {}", C_pi);
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::libc;
+
+    #[test]
+    fn test_cmp_double_val() {
+        let rust_pi = 3.141592;
+        unsafe {
+            assert_eq!(super::C_pi, rust_pi);
+        }
+    }
+}
