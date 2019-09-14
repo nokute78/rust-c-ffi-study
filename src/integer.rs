@@ -17,7 +17,7 @@ extern crate libc;
 
 
 #[link(name = "int")]
-extern {
+extern "C" {
     fn C_return_int()-> libc::c_int;
     fn C_return_int64_t() -> i64; // libc::int64_t is deprecated.
     fn C_print_int(val: libc::c_int);

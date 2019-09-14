@@ -19,7 +19,7 @@ use std::os::raw::c_char;
 use std::ptr::copy;
 
 #[link(name = "string")]
-extern {
+extern "C" {
     fn C_print_str(str: *const c_char);
     static mut kv: [C_kv; 2];
     static C_const_str: *const c_char;
