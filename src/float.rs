@@ -14,11 +14,15 @@
    limitations under the License.
 */
 
-extern crate cc;
+extern crate libc;
 
-fn main() {
-    cc::Build::new().file("src/c/helloworld.c").compile("hello");
-    cc::Build::new().file("src/c/int.c").compile("int");
-    cc::Build::new().file("src/c/string.c").compile("string");
-    cc::Build::new().file("src/c/float.c").compile("float");
+#[link(name = "float")]
+extern "C" {
+    static C_pi: libc::c_double;
+}
+
+pub fn main() {
+    unsafe {
+        println!("C_pi = {}", C_pi);
+    }
 }

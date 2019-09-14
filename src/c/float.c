@@ -14,11 +14,4 @@
    limitations under the License.
 */
 
-extern crate cc;
-
-fn main() {
-    cc::Build::new().file("src/c/helloworld.c").compile("hello");
-    cc::Build::new().file("src/c/int.c").compile("int");
-    cc::Build::new().file("src/c/string.c").compile("string");
-    cc::Build::new().file("src/c/float.c").compile("float");
-}
+const double C_pi = 3.141592;

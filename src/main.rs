@@ -16,9 +16,11 @@
 mod helloworld;
 mod integer;
 mod string;
+mod float;
 
 fn main() {
     helloworld::main();
     integer::main();
     string::main();
+    float::main();
 }
