@@ -1,6 +1,6 @@
 # rust-ffi-study
 
-[![Build Status](https://travis-ci.org/nokute78/rust-ffi-study.svg?branch=master)](https://travis-ci.org/nokute78/rust-ffi-study)
+[![Build Status](https://travis-ci.org/nokute78/rust-c-ffi-study.svg?branch=master)](https://travis-ci.org/nokute78/rust-c-ffi-study)
 
 To study rust ffi.
 
