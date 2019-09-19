@@ -12,14 +12,14 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
-extern crate cc;
+#include <stdio.h>
 
-fn main() {
-    cc::Build::new().file("src/c/helloworld.c").compile("hello");
-    cc::Build::new().file("src/c/int.c").compile("int");
-    cc::Build::new().file("src/c/string.c").compile("string");
-    cc::Build::new().file("src/c/float.c").compile("float");
-    cc::Build::new().file("src/c/callback.c").compile("callback");
+void C_callback_print(int val) {
+  printf("%s: val=%d\n",__FUNCTION__, val);
+}
+
+int C_callback_plus_one(int val) {
+  return ++val;
 }

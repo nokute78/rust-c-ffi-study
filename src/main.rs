@@ -17,10 +17,12 @@ mod helloworld;
 mod integer;
 mod string;
 mod float;
+mod callback;
 
 fn main() {
     helloworld::main();
     integer::main();
     string::main();
     float::main();
+    callback::main();
 }
